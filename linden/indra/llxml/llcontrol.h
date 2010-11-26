@@ -160,7 +160,7 @@ public:
 	~LLControlGroup();
 	void cleanup();
 	
-	LLPointer<LLControlVariable> getControl(const std::string& name);
+	LLPointer<LLControlVariable> getControl(const std::string& name) const;
 
 	struct ApplyFunctor
 	{
@@ -185,7 +185,7 @@ public:
 	
 	std::string 	findString(const std::string& name);
 
-	std::string 	getString(const std::string& name);
+	std::string 	getString(const std::string& name) const;
 	LLWString	getWString(const std::string& name);
 	std::string	getText(const std::string& name);
 	LLVector3	getVector3(const std::string& name);
@@ -220,7 +220,7 @@ public:
 	void	setValue(const std::string& name, const LLSD& val);
 	
 	
-	BOOL    controlExists(const std::string& name);
+	BOOL    controlExists(const std::string& name) const;
 
 	// Returns number of controls loaded, 0 if failed
 	// If require_declaration is false, will auto-declare controls it finds

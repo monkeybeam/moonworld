@@ -91,7 +91,6 @@ LLAppChildCallback LLApp::sDefaultChildCallback = NULL;
 LLApp::LLApp() : mThreadErrorp(NULL)
 {
 	commonCtor();
-	startErrorThread();
 }
 
 void LLApp::commonCtor()

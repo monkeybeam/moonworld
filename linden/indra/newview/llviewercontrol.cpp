@@ -71,14 +71,13 @@
 #include "llrender.h"
 #include "llslider.h"
 #include "llfloaterchat.h"
-
+#include "aithreadsafe.h"
 
 #ifdef TOGGLE_HACKED_GODLIKE_VIEWER
 BOOL 				gHackGodmode = FALSE;
 #endif
 
-
-std::map<std::string, LLControlGroup*> gSettings;
+AITHREADSAFE(settings_map_type, gSettings,);
 LLControlGroup gSavedSettings;	// saved at end of session
 LLControlGroup gSavedPerAccountSettings; // saved at end of session
 LLControlGroup gColors;			// read-only

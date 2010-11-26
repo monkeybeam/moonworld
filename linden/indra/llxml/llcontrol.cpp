@@ -254,9 +254,9 @@ LLSD LLControlVariable::getSaveValue() const
 	return mValues[0];
 }
 
-LLPointer<LLControlVariable> LLControlGroup::getControl(const std::string& name)
+LLPointer<LLControlVariable> LLControlGroup::getControl(const std::string& name) const
 {
-	ctrl_name_table_t::iterator iter = mNameTable.find(name);
+	ctrl_name_table_t::const_iterator iter = mNameTable.find(name);
 	return iter == mNameTable.end() ? LLPointer<LLControlVariable>() : iter->second;
 }
 
@@ -452,7 +452,7 @@ std::string LLControlGroup::findString(const std::string& name)
 	return LLStringUtil::null;
 }
 
-std::string LLControlGroup::getString(const std::string& name)
+std::string LLControlGroup::getString(const std::string& name) const
 {
 	LLControlVariable* control = getControl(name);
 	
@@ -599,9 +599,9 @@ LLSD LLControlGroup::getLLSD(const std::string& name)
 	return LLSD();
 }
 
-BOOL LLControlGroup::controlExists(const std::string& name)
+BOOL LLControlGroup::controlExists(const std::string& name) const
 {
-	ctrl_name_table_t::iterator iter = mNameTable.find(name);
+	ctrl_name_table_t::const_iterator iter = mNameTable.find(name);
 	return iter != mNameTable.end();
 }
 
