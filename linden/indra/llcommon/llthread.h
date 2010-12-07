@@ -40,6 +40,10 @@
 #include "apr_thread_cond.h"
 #include "aiaprpool.h"
 
+#ifdef SHOW_ASSERT
+extern bool is_main_thread(void);
+#endif
+
 class LLThread;
 class LLMutex;
 class LLCondition;

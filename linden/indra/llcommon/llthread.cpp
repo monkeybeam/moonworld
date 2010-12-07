@@ -252,7 +252,7 @@ void LLThread::wakeLocked()
 #ifdef SHOW_ASSERT
 // This allows the use of llassert(is_main_thread()) to assure the current thread is the main thread.
 static apr_os_thread_t main_thread_id;
-bool is_main_thread() { return apr_os_thread_equal(main_thread_id, apr_os_thread_current()); }
+LL_COMMON_API bool is_main_thread(void) { return apr_os_thread_equal(main_thread_id, apr_os_thread_current()); }
 #endif
 
 // The thread private handle to access the AIThreadLocalData instance.
