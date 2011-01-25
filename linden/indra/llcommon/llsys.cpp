@@ -35,7 +35,7 @@
 #include "llsys.h"
 
 #include <iostream>
-#ifdef LL_STANDALONE
+#if LL_LINUX
 # include <zlib.h>
 #else
 # include "zlib/zlib.h"

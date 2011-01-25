@@ -42,7 +42,7 @@
 #include "llvfile.h"
 #include "llvfs.h"
 
-#ifdef LL_STANDALONE
+#if LL_LINUX
 # include <zlib.h>
 #else
 # include "zlib/zlib.h"

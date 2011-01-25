@@ -67,7 +67,7 @@
 #include "u64.h"
 #include "llviewerimagelist.h"
 #include "lldatapacker.h"
-#ifdef LL_STANDALONE
+#if LL_LINUX
 #include <zlib.h>
 #else
 #include "zlib/zlib.h"
