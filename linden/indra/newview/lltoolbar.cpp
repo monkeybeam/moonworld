@@ -236,7 +236,7 @@ void LLToolBar::toggle(void*)
 // static
 BOOL LLToolBar::visible(void*)
 {
-	return gToolBar->getVisible();
+	return gToolBar && gToolBar->getVisible();
 }
 
 

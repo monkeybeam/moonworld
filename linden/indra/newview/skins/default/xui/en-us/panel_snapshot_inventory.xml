@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel background_visible="false" border="false" border_visible="false" bottom="0"
+     enabled="true" follows="top|bottom|left|right" name="windlight_controls" width="232">
+  <button bottom="-26" font="SansSerif" height="24" label="Snapshot" left="6"
+	     image_overlay="icn_toolbar_snapshot.tga" image_overlay_alignment="left"
+		 image_selected="toolbar_btn_selected.tga" image_unselected="toolbar_btn_enabled.tga"
+		 image_disabled="toolbar_btn_disabled.tga" scale_image="true" name="snapshot_btn"
+		 tool_tip="Save a screen shot to disk or inventory." width="110" min_width="100"
+		 auto_resize="false" user_resize ="false"/>
+  <button bottom="-26" font="SansSerif" height="24" label="Inventory" right="-4"
+	     image_overlay="icn_toolbar_inventory.tga" image_overlay_alignment="left"
+		 image_selected="toolbar_btn_selected.tga" image_unselected="toolbar_btn_enabled.tga"
+		 image_disabled="toolbar_btn_disabled.tga" scale_image="true" name="inventory_btn"
+		 tool_tip="Your items. (Ctrl-I)" width="110" min_width="100"
+		 auto_resize="false" user_resize="false"/>
+</panel>

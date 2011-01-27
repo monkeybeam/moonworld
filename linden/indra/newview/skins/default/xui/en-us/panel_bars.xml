@@ -12,7 +12,7 @@
 		     name="spacer" user_resize="false" width="1024" />
 		<layout_panel auto_resize="false" name="overlay" use_bounding_rect="true" user_resize="false"
 		     width="1024" min_height="200" />
-		<layout_panel auto_resize="false" filename="panel_toolbar.xml" name="toolbar"
+		<layout_panel auto_resize="false" filename="panel_toolbar.xml" name="toolbar" moonworld="false"
 		     use_bounding_rect="true" user_resize="false" width="1024" min_height="28" />
 	</layout_stack>
 </panel>

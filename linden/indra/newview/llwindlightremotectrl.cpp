@@ -42,6 +42,7 @@
 #include "llwlparammanager.h"
 #include "llviewercontrol.h"
 #include "llviewerwindow.h"
+#include "lltoolbar.h"
 
 // [RLVa:KB] - Alternate: Imprudence-1.2.0
 #include "rlvhandler.h"
@@ -102,6 +103,8 @@ void LLWindlightRemoteCtrl::draw()
 
 void LLWindlightRemoteCtrl::build()
 {
+	// MoonWorld: Hide Editor and Sky buttons.
+#if 0
 	if (gSavedSettings.getBOOL("ShowWindlightSettingsPopup"))
 	{
 		LLUICtrlFactory::getInstance()->buildPanel(this, "panel_windlight_remote_expanded.xml");
@@ -110,11 +113,16 @@ void LLWindlightRemoteCtrl::build()
 	{
 		LLUICtrlFactory::getInstance()->buildPanel(this, "panel_windlight_remote.xml");
 	}
+#else
+	// HACK: Should be somewhere else (not windlight related).
+	// MoonWorld: Replace those windlight buttons with the Snapshot and Inventory buttons:
+	LLUICtrlFactory::getInstance()->buildPanel(this, "panel_windlight_remote.xml");
+#endif
 }
 
 BOOL LLWindlightRemoteCtrl::postBuild()
 {
-	
+#if 0	
 	childSetAction("Environment", onClickToggleEnvironment, this);
 	childSetAction("Popup", onClickPopupBtn, this);
 
@@ -132,7 +140,16 @@ BOOL LLWindlightRemoteCtrl::postBuild()
 		// refresh list from current presets
 		refreshPresets();
 	}
+#else
+	// HACK: Should be somewhere else (not windlight related).
+	// MoonWorld: LLToolBar is no more -- these two last buttons were moved here.
+	childSetAction("snapshot_btn", &LLToolBar::onClickSnapshot, this);
+	childSetControlName("snapshot_btn", "");
 
+	childSetAction("inventory_btn", &LLToolBar::onClickInventory, this);
+	childSetControlName("inventory_btn", "ShowInventory");
+
+#endif
 	return TRUE;
 }
 

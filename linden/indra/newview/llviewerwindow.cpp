@@ -2799,7 +2799,7 @@ BOOL LLViewerWindow::handlePerFrameHover()
 	}
 
 	// Update rectangles for the various toolbars
-	if (gOverlayBar && gNotifyBoxView && gConsole && gToolBar)
+	if (gOverlayBar && gNotifyBoxView && gConsole /*&& gToolBar*/)
 	{
 		LLRect bar_rect(-1, STATUS_BAR_HEIGHT, getWindowWidth()+1, -1);
 
@@ -2834,7 +2834,7 @@ BOOL LLViewerWindow::handlePerFrameHover()
 												gFloaterView);
 			gFloaterView->setSnapOffsetBottom(top);
 		}
-		else if (gToolBar->getVisible())
+		if (LLToolBar::visible(NULL))
 		{
 			S32 top, left;
 			gToolBar->localPointToOtherView(
